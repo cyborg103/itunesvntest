@@ -1,0 +1,22 @@
+<template name="postsList">
+  <button class="btn-copy-link">Copy</button>
+	{{#with info}}
+        {{artistName}} - {{collectionName}} [iTunes Plus AAC]<br>
+    {{/with}}
+	<ul style="list-style-type: circle;">
+		{{#with info}} 
+            <li>Genre: {{primaryGenreName}}</li>
+            <li>Realeased: {{releaseDate}}</li>
+            <li>{{copyright}}</li>
+            <li><a href="{{collectionViewUrl}}">View in iTunes</a></li>
+        {{/with}}
+    </ul>
+	<div class="posts">
+  	<blockquote>
+  	<strong>Tracklist:</strong><br>
+  		{{#each posts}}
+      		{{> tracklist}}
+    	{{/each}}
+  	</blockquote>
+	</div>
+</template>
